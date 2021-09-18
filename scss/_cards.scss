@@ -1,0 +1,92 @@
+.arrow-control {
+  img {
+    position: absolute;
+    cursor: pointer;
+    z-index: 3;
+  }
+  img:first-child {
+    left: 1vw;
+    opacity: 0.25;
+    cursor: default;
+  }
+  img:last-child {
+    right: 1vw;
+  }
+}
+.cards-container {
+  height: 100%;
+  padding: 5vh 1vw;
+  transition: transform 0.5s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  position: relative;
+  .grid-container {
+    padding: 0 4vw;
+    min-width: 80vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    column-gap: 15px;
+    row-gap: 15px;
+    left: 0;
+    transition: all 0.5s linear;
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+      border-radius: 10px;
+      min-height: 38vh;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      padding-bottom: 1rem;
+      &:hover {
+        transform: scale(1.1);
+        background: #fff;
+        z-index: 2;
+      }
+    }
+  }
+}
+.img-container {
+  height: 13rem;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+.title {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 1rem;
+}
+.body {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .arrow-control {
+    img {
+      width: 30px;
+    }
+  }
+  .grid-container {
+    padding: 0 4vw;
+    min-width: 80vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    column-gap: 15px;
+    row-gap: 15px;
+    left: 0;
+    transition: all 0.5s linear;
+  }
+}

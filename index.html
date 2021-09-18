@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./scss/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/script.js" defer></script>
+    <script src="./js/animations.js" defer></script>
+    <script src="./js/form.js" defer></script>
+    <title>Homework-1</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <object
+          class="logo-object"
+          data="./assets/logo.svg"
+          type="image/svg+xml"
+        >
+          <span>Sorry, your browser does not support SVG</span>
+        </object>
+      </div>
+      <div class="search">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Can't touch me..."
+          disabled
+        />
+        <img src="./assets/search-icon.svg" alt="search-icon" />
+      </div>
+      <div class="user">
+        <img src="./assets/user-icon.svg" alt="user-icon" />
+      </div>
+    </header>
+    <main class="main">
+      <aside class="aside">
+        <div class="items-container">
+          <span class="form-btn active-btn">Form</span>
+          <span class="cards-btn">Cards</span>
+        </div>
+      </aside>
+      <div class="vertical-line"></div>
+      <div class="content">
+        <div class="form-container">
+          <form>
+            <div class="input-row">
+              <div class="input-container">
+                <label for="company">* Company</label>
+                <input type="text" id="company" name="company" required />
+              </div>
+              <div class="input-container">
+                <label for="name">* Full Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="input-container">
+                <label for="email">* Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-container">
+                <label for="training">* Tranining Session</label>
+                <input type="text" id="training" name="training" required />
+              </div>
+              <div class="input-container">
+                <label for="name">* Phone</label>
+                <input type="tel" id="tel" name="tel" required />
+              </div>
+              <div class="input-container">
+                <label for="title">* Title</label>
+                <input type="text" id="title" name="title" required />
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-container">
+                <label for="expectations">* Expectations?</label>
+                <textarea name="expectations" id="expectations"></textarea>
+              </div>
+              <div class="input-container">
+                <label>Job Description</label>
+                <div class="job-input-row">
+                  <input type="radio" value="Partner" id="partner" name="job" />
+                  <label for="partner">Partner</label>
+                </div>
+                <div class="job-input-row">
+                  <input
+                    type="radio"
+                    value="Employee"
+                    id="employee"
+                    name="job"
+                  />
+                  <label for="employee">Employee</label>
+                </div>
+              </div>
+              <div class="input-container">
+                <label for="cancel">Cancel Registration</label>
+                <span class="checkbox-info"
+                  >Check the box if you want to cancel</span
+                >
+                <input type="checkbox" id="cancel" name="cancel" />
+              </div>
+            </div>
+            <div class="btn-container">
+              <button type="submit" class="push">
+                <span class="front">Submit</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="cards-container">
+          <div class="arrow-control">
+            <img
+              class="left-arrow"
+              src="./assets/left-arrow.svg"
+              alt="left-arrow"
+            />
+            <img
+              class="right-arrow"
+              src="./assets/right-arrow.svg"
+              alt="right-arrow"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-modal">
+        <p>Company:</p>
+        <p>Full Name:</p>
+        <p>Email:</p>
+        <p>Training Session:</p>
+        <p>Phone:</p>
+        <p>Title:</p>
+        <p>Expectations:</p>
+        <p>Job Description:</p>
+        <p>Cancel Registration:</p>
+        <button class="close-btn">Close</button>
+      </div>
+    </main>
+  </body>
+</html>

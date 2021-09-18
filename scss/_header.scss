@@ -1,0 +1,41 @@
+.header{
+    @include flex();
+    padding: 2rem 4rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    height:10vh;
+    .logo, .user{
+        flex: 1.5;
+        display: flex;
+        justify-content: flex-start;
+        object, img{
+            width: 5.5rem;
+        }
+    }
+    .user{
+        justify-content: flex-end;
+    }
+    .search{
+        position: relative;
+        flex: 2;
+        display:flex;
+        align-items: center;
+        input{
+            border: 0;
+            border-bottom: 3px solid #000;
+            width: 100%;
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            height: 5rem;
+            cursor: none;
+            background: #fff;
+            &:focus{
+                outline: none;
+            }
+        }
+        img{
+            position: absolute;
+            right:0;
+            width: 3rem;
+        }
+    }
+}
