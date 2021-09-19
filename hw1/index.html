@@ -10,9 +10,10 @@
     />
     <link rel="stylesheet" href="./scss/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./js/script.js" defer></script>
-    <script src="./js/animations.js" defer></script>
+    <script src="./js/cards.js" defer></script>
     <script src="./js/form.js" defer></script>
+    <script type="module" src="./js/animations.js" defer></script>
+    <script type="module" src="./js/menu.js" defer></script>
     <title>Homework-1</title>
   </head>
   <body>
@@ -84,9 +85,15 @@
                 <textarea name="expectations" id="expectations"></textarea>
               </div>
               <div class="input-container">
-                <label>Job Description</label>
+                <label>* Job Description</label>
                 <div class="job-input-row">
-                  <input type="radio" value="Partner" id="partner" name="job" />
+                  <input
+                    type="radio"
+                    value="Partner"
+                    id="partner"
+                    name="job"
+                    required
+                  />
                   <label for="partner">Partner</label>
                 </div>
                 <div class="job-input-row">
@@ -95,6 +102,7 @@
                     value="Employee"
                     id="employee"
                     name="job"
+                    required
                   />
                   <label for="employee">Employee</label>
                 </div>
@@ -130,6 +138,7 @@
         </div>
       </div>
       <div class="form-modal">
+        <p class="form-modal-title">Form Modal</p>
         <p>Company:</p>
         <p>Full Name:</p>
         <p>Email:</p>
@@ -140,6 +149,18 @@
         <p>Job Description:</p>
         <p>Cancel Registration:</p>
         <button class="close-btn">Close</button>
+      </div>
+      <div class="menu-icon">
+        <img src="./assets/menu.svg" alt="menu-icon" />
+      </div>
+      <div class="menu">
+        <div class="close-icon-container">
+          <img src="./assets/close.svg" alt="close-icon" />
+        </div>
+        <div class="link-container">
+          <span>Form</span>
+          <span>Cards</span>
+        </div>
       </div>
     </main>
   </body>

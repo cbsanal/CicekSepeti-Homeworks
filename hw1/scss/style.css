@@ -17,10 +17,55 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: #000;
-  cursor: default;
+.menu-icon {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  border: 1px solid;
+  border-left: none;
+  padding: 1rem;
+  display: none;
+  cursor: pointer;
+  background: #fff;
+  z-index: 4;
+}
+
+.menu {
+  position: absolute;
+  padding: 1rem;
+  top: 2rem;
+  background: #fff;
+  z-index: 4;
+  width: 20rem;
+  border: 1px solid;
+  text-align: center;
+  height: 20rem;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu img {
+  float: right;
+  cursor: pointer;
+}
+
+.menu .link-container {
+  margin: auto;
+}
+
+.menu .link-container span {
+  display: block;
+  font-size: 2rem;
+  line-height: 3;
+}
+
+@media (max-width: 690px) {
+  .menu-icon {
+    display: block;
+  }
 }
 
 .header {
@@ -40,10 +85,11 @@ a {
   padding: 2rem 4rem;
   -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-  height: 10vh;
+  min-height: 10vh;
 }
 
-.header .logo, .header .user {
+.header .logo,
+.header .user {
   -webkit-box-flex: 1.5;
       -ms-flex: 1.5;
           flex: 1.5;
@@ -55,7 +101,10 @@ a {
           justify-content: flex-start;
 }
 
-.header .logo object, .header .logo img, .header .user object, .header .user img {
+.header .logo object,
+.header .logo img,
+.header .user object,
+.header .user img {
   width: 5.5rem;
 }
 
@@ -83,7 +132,7 @@ a {
   border-bottom: 3px solid #000;
   width: 100%;
   font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   height: 5rem;
   cursor: none;
   background: #fff;
@@ -97,6 +146,29 @@ a {
   position: absolute;
   right: 0;
   width: 3rem;
+}
+
+@media (max-width: 690px) {
+  .header {
+    min-height: 5vh;
+    padding: 1rem 1.5rem !important;
+  }
+  .header object,
+  .header img {
+    width: 3rem !important;
+  }
+  .header .search {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+  }
+  .header .search img {
+    width: 2rem !important;
+  }
+  .header .search input {
+    font-size: 1.5rem !important;
+    height: 3rem;
+  }
 }
 
 .main {
@@ -113,6 +185,8 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding-bottom: 2rem;
+  position: relative;
 }
 
 .main .aside {
@@ -129,33 +203,34 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-flex: .75;
-      -ms-flex: .75;
-          flex: .75;
+  -webkit-box-flex: 0.75;
+      -ms-flex: 0.75;
+          flex: 0.75;
   text-align: center;
-  height: 90vh;
+  min-height: 90vh;
 }
 
-.main .aside .form-btn, .main .aside .cards-btn {
-  opacity: .5;
+.main .aside .form-btn,
+.main .aside .cards-btn {
+  opacity: 0.5;
   font-size: 2.5rem;
-  -webkit-transition: font-size .3s ease;
-  transition: font-size .3s ease;
+  -webkit-transition: font-size 0.3s ease;
+  transition: font-size 0.3s ease;
   cursor: pointer;
   margin: 5rem 1rem;
   display: block;
 }
 
 .main .vertical-line {
-  width: .5rem;
+  width: 0.5rem;
   background: #000;
   height: 80vh;
 }
 
 .main .content {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
+  -webkit-box-flex: 4.25;
+      -ms-flex: 4.25;
+          flex: 4.25;
   overflow: hidden;
 }
 
@@ -165,10 +240,16 @@ a {
   opacity: 1 !important;
 }
 
+@media (max-width: 690px) {
+  .aside,
+  .vertical-line {
+    display: none !important;
+  }
+}
+
 .content {
   overflow: hidden;
   height: 90vh;
-  position: relative;
 }
 
 .form-container {
@@ -178,6 +259,7 @@ a {
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  overflow-y: auto;
 }
 
 .form-container .input-row {
@@ -194,11 +276,12 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 10vh;
+  margin-bottom: 5%;
 }
 
 .form-container .input-row .input-container {
   width: 20vw;
+  max-width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,6 +318,13 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-top: 2rem;
 }
 
@@ -313,22 +403,6 @@ a {
   }
 }
 
-.arrow-control img {
-  position: absolute;
-  cursor: pointer;
-  z-index: 3;
-}
-
-.arrow-control img:first-child {
-  left: 1vw;
-  opacity: 0.25;
-  cursor: default;
-}
-
-.arrow-control img:last-child {
-  right: 1vw;
-}
-
 .cards-container {
   height: 100%;
   padding: 5vh 1vw;
@@ -338,16 +412,15 @@ a {
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
 }
 
 .cards-container .grid-container {
   padding: 0 4vw;
   min-width: 80vw;
-  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(240px, 1fr))[auto-fill];
@@ -355,7 +428,6 @@ a {
   -webkit-column-gap: 15px;
           column-gap: 15px;
   row-gap: 15px;
-  left: 0;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
@@ -368,76 +440,79 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
-          box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border: 0.5px solid;
   border-radius: 10px;
-  min-height: 38vh;
-  cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   padding-bottom: 1rem;
+  background: #fff;
 }
 
 .cards-container .grid-container .grid-item:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  background: #fff;
   z-index: 2;
 }
 
-.img-container {
+.cards-container .grid-container .grid-item .img-container {
   height: 13rem;
 }
 
-.img-container img {
-  display: block;
+.cards-container .grid-container .grid-item .img-container img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
-.title {
+.cards-container .grid-container .grid-item .title,
+.cards-container .grid-container .grid-item .body {
+  padding: 0 1rem;
   margin-top: 1rem;
+}
+
+.cards-container .grid-container .grid-item .title {
   font-size: 1.5rem;
   font-weight: 700;
-  padding: 0 1rem;
 }
 
-.body {
-  margin-top: 1rem;
+.cards-container .grid-container .grid-item .body {
   font-size: 1.3rem;
-  padding: 0 1rem;
 }
 
-@media screen and (max-width: 480px) {
+.arrow-control img {
+  position: absolute;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.arrow-control .left-arrow {
+  left: 1vw;
+  opacity: 0.25;
+  cursor: default;
+}
+
+.arrow-control .right-arrow {
+  right: 1vw;
+}
+
+@media (max-width: 690px) {
   .arrow-control img {
-    width: 30px;
-  }
-  .grid-container {
-    padding: 0 4vw;
-    min-width: 80vw;
-    position: relative;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(140px, 1fr))[auto-fill] !important;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
-    -webkit-column-gap: 15px;
-            column-gap: 15px;
-    row-gap: 15px;
-    left: 0;
-    -webkit-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+    top: 8rem !important;
   }
 }
 
 .form-modal {
   position: absolute;
-  width: 80vw;
-  height: 80vh;
+  min-width: 80vw;
+  min-height: 80vh;
+  overflow: auto;
   background: #000;
+  border-radius: 1rem;
   left: 50%;
   top: 50%;
   padding: 2rem 0;
@@ -450,6 +525,11 @@ a {
 
 .form-modal > p {
   font-size: 2rem;
+}
+
+.form-modal .form-modal-title {
+  font-weight: 700;
+  font-size: 2.4rem;
 }
 
 .close-btn {

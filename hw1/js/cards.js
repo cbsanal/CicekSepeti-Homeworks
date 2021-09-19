@@ -67,7 +67,7 @@ searchBar.addEventListener("keyup", (e) => {
   contentNumber = 1;
   currentIndex = 0;
   if (e.target.value !== "") {
-    const value = e.target.value;
+    const value = e.target.value.toLowerCase();
     const filteredData = data.filter(
       (item) => item.body.includes(value) || item.title.includes(value)
     );

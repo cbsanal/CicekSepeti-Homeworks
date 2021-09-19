@@ -1,17 +1,18 @@
 .content {
   overflow: hidden;
   height: 90vh;
-  position: relative;
 }
 .form-container {
   height: 100%;
   padding: 5vh 3vw;
   transition: transform 0.5s ease-in-out;
+  overflow-y: auto;
   .input-row {
     @include flex($align: flex-start);
-    margin-bottom: 10vh;
+    margin-bottom: 5%;
     .input-container {
       width: 20vw;
+      max-width: 300px;
       @include flex($direction: column, $align: left, $justify: flex-start);
       font-size: 2rem;
       input[type="text"],
@@ -26,8 +27,7 @@
         height: 20vh;
       }
       .job-input-row {
-        display: flex;
-        align-items: center;
+        @include flex($align: center, $justify: normal);
         margin-top: 2rem;
         input[type="radio"] {
           width: 2rem;
