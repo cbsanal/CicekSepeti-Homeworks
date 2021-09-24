@@ -2,6 +2,9 @@
 
 .footer {
   @extend .bottom;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
   box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.4);
   font-size: 2rem;
   .icon-wrapper {

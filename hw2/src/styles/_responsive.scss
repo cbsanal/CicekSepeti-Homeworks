@@ -1,3 +1,16 @@
+@media (min-width: 1921px) {
+  html {
+    font-size: 100%;
+  }
+}
+@media (max-width: 1920px) and (min-width: 1440px) {
+  html {
+    font-size: 80%;
+  }
+  .card-cover-text {
+    font-size: 1.75rem !important;
+  }
+}
 @media (max-width: 1190px) {
   html {
     font-size: 55%;
