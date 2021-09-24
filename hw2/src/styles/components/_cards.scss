@@ -1,0 +1,59 @@
+.cards-container {
+  padding: 3.5vh 3vw;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(20vw, 1fr));
+  column-gap: 15px;
+  row-gap: 15px;
+  .card {
+    position: relative;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border: 0.5px solid;
+    border-radius: 12px;
+    background: #fff;
+    height: 25vh;
+    .img-container {
+      height: 100%;
+      z-index: 2;
+    }
+    .card-text {
+      color: #fff;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 0;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1em;
+      min-width: 20%;
+    }
+    .name {
+      @extend .card-text;
+      left: 0;
+      border-radius: 10px 0 10px 0;
+    }
+    .age {
+      @extend .card-text;
+      right: 0;
+      border-radius: 0 10px 0 10px;
+    }
+    .card-cover {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      transition: opacity 0.3s ease-in-out;
+      background-color: #fff;
+      border-radius: 12px;
+      display: flex;
+      .card-cover-text {
+        text-align: center;
+        font-size: 1.5vw;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        font-style: italic;
+        margin: auto;
+      }
+    }
+  }
+}

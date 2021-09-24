@@ -1,0 +1,68 @@
+@use '../helpers' as func;
+
+.modal {
+  position: absolute;
+  min-width: 60vw;
+  min-height: 50vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  z-index: 10;
+  background: #fff;
+  border-radius: 15px;
+  text-align: center;
+}
+.container {
+  @include func.flex($justify: center, $direction: column);
+  letter-spacing: 1px;
+  & > * {
+    margin: 1em 0;
+    font-size: 2rem;
+  }
+  b {
+    font-size: 3rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid;
+    margin-bottom: 2rem;
+    display: inline-block;
+  }
+  button {
+    background: #fff;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease;
+    &:hover {
+      color: #fff;
+      background: #000;
+    }
+  }
+}
+.rules-modal {
+  @extend .modal;
+  @extend .container;
+}
+.final-score-modal {
+  @extend .modal;
+  .items-container {
+    @extend .container;
+    & > * {
+      margin: 1em 0;
+      font-size: 2.5rem;
+    }
+  }
+  display: none;
+}
+.middle-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100vw;
+}

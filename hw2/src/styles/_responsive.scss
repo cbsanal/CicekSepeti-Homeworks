@@ -1,0 +1,24 @@
+@media (max-width: 1190px) {
+  html {
+    font-size: 55%;
+  }
+  .rules-modal {
+    min-width: 80vw;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .card-cover-text {
+    font-size: 1.5rem !important;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 44%;
+  }
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

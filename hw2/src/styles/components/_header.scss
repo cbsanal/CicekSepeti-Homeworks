@@ -1,0 +1,36 @@
+@use '../helpers' as func;
+
+.header {
+  @extend .top;
+  .find-match-text {
+    flex: 1;
+    font-style: italic;
+    font-size: 2rem;
+    b {
+      padding-bottom: 0.3rem;
+      border-bottom: 0.5px solid;
+    }
+  }
+  .text {
+    flex: 1;
+    font-size: 2rem;
+  }
+  .timer {
+    @include func.flex($justify: center);
+    @extend .text;
+    & > div {
+      flex: 1;
+    }
+    .timer-text {
+      text-align: right;
+      padding-right: 0.5rem;
+    }
+    .time-counter {
+      text-align: left;
+    }
+  }
+  .score {
+    @extend .text;
+    text-align: right;
+  }
+}

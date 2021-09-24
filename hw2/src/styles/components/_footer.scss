@@ -1,0 +1,19 @@
+@use '../helpers' as func;
+
+.footer {
+  @extend .bottom;
+  box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.4);
+  font-size: 2rem;
+  .icon-wrapper {
+    @include func.flex($justify: normal);
+    a {
+      display: flex;
+    }
+    a:first-child {
+      margin-right: 1em;
+    }
+    img {
+      width: 3.5rem;
+    }
+  }
+}

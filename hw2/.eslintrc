@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "rules": {
+    "no-restricted-globals": 0,
+    "one-var": 0,
+    "operator-linebreak": 0,
+    "tnonblock-statement-body-position": 0,
+    "curly": 0,
+    "no-plusplus": 0,
+    "no-param-reassign": 0,
+    "comma-dangle": 0,
+    "import/ignore": 0,
+    "import/extensions": 0,
+    "no-continue": 0,
+    "no-console": 0,
+    "max-classes-per-file": 0,
+    "no-nested-ternary": 0,
+    "complexity": 0,
+    "camelcase": 0
+  },
+  "globals": {
+    "fetch": false
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
