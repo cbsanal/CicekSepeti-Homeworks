@@ -1,16 +1,17 @@
 const formModal = document.querySelector(".form-modal");
 const formElements = document.querySelectorAll(".form-modal p");
-const sumbitBtn = document.querySelector(".push");
 const closeBtn = document.querySelector(".close-btn");
+const form = document.querySelector("form");
 
-sumbitBtn.addEventListener("click", (e) => {
-  const company = document.querySelector("#company").value || "Empty";
-  const nameValue = document.querySelector("#name").value || "Empty";
-  const email = document.querySelector("#email").value || "Empty";
-  const training = document.querySelector("#training").value || "Empty";
-  const phone = document.querySelector("#tel").value || "Empty";
-  const title = document.querySelector("#title").value || "Empty";
-  const expectations = document.querySelector("#expectations").value || "Empty";
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const company = document.querySelector("#company").value;
+  const nameValue = document.querySelector("#name").value;
+  const email = document.querySelector("#email").value;
+  const training = document.querySelector("#training").value;
+  const phone = document.querySelector("#tel").value;
+  const title = document.querySelector("#title").value;
+  const expectations = document.querySelector("#expectations").value;
   const partner = document.querySelector("#partner");
   const employee = document.querySelector("#employee");
   const cancel = document.querySelector("#cancel");
@@ -29,7 +30,6 @@ sumbitBtn.addEventListener("click", (e) => {
   else formElements[8].innerText = `Job Description: Empty`;
   formElements[9].innerText = `Cancel Registration: ${cancel.checked}`;
   formModal.style.display = "block";
-  e.preventDefault();
 });
 closeBtn.addEventListener("click", () => {
   formModal.style.display = "none";

@@ -18,7 +18,7 @@ const createEightElement = (data) => {
     const random = Math.floor(Math.random() * 100);
     const gridItemDOM = `
           <div class="img-container">
-              <img src='https://source.unsplash.com/collection/${random}/250x250' alt="image">
+              <img src='https://source.unsplash.com/collection/${random}/250x250' alt="random-image">
           </div>
           <div class="title">${oneItem.title}</div>
           <div class="body">${oneItem.body}</div>
@@ -67,14 +67,12 @@ searchBar.addEventListener("keyup", (e) => {
   contentNumber = 1;
   currentIndex = 0;
   if (e.target.value !== "") {
-    const value = e.target.value.toLowerCase();
+    const value = e.target.value;
     const filteredData = data.filter(
       (item) => item.body.includes(value) || item.title.includes(value)
     );
     const gridContainerAll = document.querySelectorAll(".grid-container");
-    gridContainerAll.forEach((gridContainer) => {
-      gridContainer.remove();
-    });
+    gridContainerAll.forEach((gridContainer) => gridContainer.remove());
     rightArrow.style.display = "none";
     leftArrow.style.display = "none";
     createEightElement(filteredData);
@@ -84,9 +82,7 @@ searchBar.addEventListener("keyup", (e) => {
     leftArrow.style.opacity = "0.25";
     leftArrow.style.cursor = "default";
     const gridContainerAll = document.querySelectorAll(".grid-container");
-    gridContainerAll.forEach((gridContainer) => {
-      gridContainer.remove();
-    });
+    gridContainerAll.forEach((gridContainer) => gridContainer.remove());
     createEightElement(data);
   }
 });

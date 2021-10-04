@@ -1,12 +1,10 @@
-.main {
+main {
   @include flex();
-  padding-bottom: 2rem;
-  position: relative;
-  .aside {
+  aside {
     @include flex($justify: center);
     flex: 0.75;
     text-align: center;
-    min-height: 90vh;
+    height: 90vh;
     .form-btn,
     .cards-btn {
       opacity: 0.5;
@@ -23,7 +21,7 @@
     height: 80vh;
   }
   .content {
-    flex: 4.25;
+    flex: 4;
     overflow: hidden;
   }
 }
@@ -31,11 +29,4 @@
   font-weight: 700 !important;
   font-size: 4rem !important;
   opacity: 1 !important;
-}
-
-@media (max-width: 690px) {
-  .aside,
-  .vertical-line {
-    display: none !important;
-  }
 }

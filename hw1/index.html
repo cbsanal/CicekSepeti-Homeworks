@@ -10,20 +10,16 @@
     />
     <link rel="stylesheet" href="./scss/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./js/cards.js" defer></script>
-    <script src="./js/form.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <script type="module" src="./js/animations.js" defer></script>
     <script type="module" src="./js/menu.js" defer></script>
+    <script src="./js/form.js" defer></script>
     <title>Homework-1</title>
   </head>
   <body>
-    <header class="header">
+    <header>
       <div class="logo">
-        <object
-          class="logo-object"
-          data="./assets/logo.svg"
-          type="image/svg+xml"
-        >
+        <object class="logo-img" data="./assets/logo.svg" type="image/svg+xml">
           <span>Sorry, your browser does not support SVG</span>
         </object>
       </div>
@@ -34,14 +30,18 @@
           placeholder="Can't touch me..."
           disabled
         />
-        <img src="./assets/search-icon.svg" alt="search-icon" />
+        <img
+          class="search-icon"
+          src="./assets/search-icon.svg"
+          alt="search-icon"
+        />
       </div>
       <div class="user">
-        <img src="./assets/user-icon.svg" alt="user-icon" />
+        <img class="user-img" src="./assets/user-icon.svg" alt="user-icon" />
       </div>
     </header>
-    <main class="main">
-      <aside class="aside">
+    <main>
+      <aside>
         <div class="items-container">
           <span class="form-btn active-btn">Form</span>
           <span class="cards-btn">Cards</span>
@@ -52,39 +52,43 @@
         <div class="form-container">
           <form>
             <div class="input-row">
-              <div class="input-container">
+              <div>
                 <label for="company">* Company</label>
                 <input type="text" id="company" name="company" required />
               </div>
-              <div class="input-container">
+              <div>
                 <label for="name">* Full Name</label>
                 <input type="text" id="name" name="name" required />
               </div>
-              <div class="input-container">
+              <div>
                 <label for="email">* Email</label>
                 <input type="email" id="email" name="email" required />
               </div>
             </div>
             <div class="input-row">
-              <div class="input-container">
+              <div>
                 <label for="training">* Tranining Session</label>
                 <input type="text" id="training" name="training" required />
               </div>
-              <div class="input-container">
+              <div>
                 <label for="name">* Phone</label>
                 <input type="tel" id="tel" name="tel" required />
               </div>
-              <div class="input-container">
+              <div>
                 <label for="title">* Title</label>
                 <input type="text" id="title" name="title" required />
               </div>
             </div>
             <div class="input-row">
-              <div class="input-container">
+              <div>
                 <label for="expectations">* Expectations?</label>
-                <textarea name="expectations" id="expectations"></textarea>
+                <textarea
+                  name="expectations"
+                  id="expectations"
+                  required
+                ></textarea>
               </div>
-              <div class="input-container">
+              <div>
                 <label>* Job Description</label>
                 <div class="job-input-row">
                   <input
@@ -102,12 +106,11 @@
                     value="Employee"
                     id="employee"
                     name="job"
-                    required
                   />
                   <label for="employee">Employee</label>
                 </div>
               </div>
-              <div class="input-container">
+              <div>
                 <label for="cancel">Cancel Registration</label>
                 <span class="checkbox-info"
                   >Check the box if you want to cancel</span
@@ -138,7 +141,7 @@
         </div>
       </div>
       <div class="form-modal">
-        <p class="form-modal-title">Form Modal</p>
+        <p><b>Form Modal</b></p>
         <p>Company:</p>
         <p>Full Name:</p>
         <p>Email:</p>
