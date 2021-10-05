@@ -103,18 +103,21 @@ header {
   }
 }
 @media (max-width: 768px) {
-  .search {
-    display: none !important;
-  }
-  .logo-title {
-    font-size: 1.6rem !important;
-  }
-  .btn-wrapper {
-    .item-btn {
-      padding: 1rem !important;
-      font-size: 1.25rem !important;
-      img {
-        width: 1rem;
+  header {
+    padding: 1.75rem 1rem;
+    .search {
+      display: none !important;
+    }
+    .logo-title {
+      font-size: 1.6rem !important;
+    }
+    .btn-wrapper {
+      .item-btn {
+        padding: 0.75rem !important;
+        font-size: 1.25rem !important;
+        img {
+          width: 1rem;
+        }
       }
     }
   }
