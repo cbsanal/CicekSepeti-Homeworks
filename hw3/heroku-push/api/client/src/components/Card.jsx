@@ -2,16 +2,15 @@ import deleteIcon from "../icons/delete.svg";
 import updateIcon from "../icons/update.svg";
 import eyeIcon from "../icons/eye.svg";
 import { toast } from "react-toastify";
-// import axiosInstance from "../config";
-import axios from "axios";
+import axiosInstance from "../config";
 import { toastOptions } from "../helpers/toastOptions";
 
 const Card = (props) => {
   const deleteCard = async (id) => {
     try {
-      await axios({
+      await axiosInstance({
         method: "DELETE",
-        url: `http://localhost:8000/api/card/deleteCard/${id}`,
+        url: `/deleteCard/${id}`,
       });
       toast.success("Data deleted successfully!", { toastOptions });
       props.fetchDatas();

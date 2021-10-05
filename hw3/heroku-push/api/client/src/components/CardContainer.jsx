@@ -1,5 +1,4 @@
-//import axiosInstance from "../config";
-import axios from "axios";
+import axiosInstance from "../config";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { toastOptions } from "../helpers/toastOptions";
@@ -17,7 +16,7 @@ const CardContainer = ({ newCardModal, setNewCardModal, searchValue }) => {
 
   const fetchDatas = async () => {
     try {
-      const cards = await axios("http://localhost:8000/api/card/allCards");
+      const cards = await axiosInstance("/allCards");
       const cardsArray = cards.data.allCards;
       setDatas(cardsArray);
       setOriginalData(cardsArray);

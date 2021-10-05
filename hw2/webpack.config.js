@@ -1,5 +1,6 @@
 /* eslint-disable */
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
@@ -8,7 +9,7 @@ module.exports = {
     rules: [
       {
         test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.js$/,
@@ -28,6 +29,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [new MiniCssExtractPlugin()],
   devServer: {
     static: './src/',
     hot: true,

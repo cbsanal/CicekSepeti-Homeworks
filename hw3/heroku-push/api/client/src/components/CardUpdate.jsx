@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-// import axiosInstance from "../config";
+import axiosInstance from "../config";
 import axios from "axios";
 import close from "../icons/close.svg";
 import { toast } from "react-toastify";
@@ -17,9 +17,9 @@ const CardUpdate = ({ setCardUpdateModal, currentCardId, fetchDatas }) => {
     e.preventDefault(e);
     try {
       await axios(photoURL.current.value);
-      await axios({
+      await axiosInstance({
         method: "PATCH",
-        url: `http://localhost:8000/api/card/updateCard/${currentCardId}`,
+        url: `/updateCard/${currentCardId}`,
         data: {
           photoURL: photoURL.current.value,
           title: title.current.value,
@@ -38,9 +38,7 @@ const CardUpdate = ({ setCardUpdateModal, currentCardId, fetchDatas }) => {
 
   useEffect(() => {
     const getCardInfo = async () => {
-      const res = await axios.get(
-        `http://localhost:8000/api/card/oneCard/${currentCardId}`
-      );
+      const res = await axiosInstance(`/oneCard/${currentCardId}`);
       setData(res.data.card[0]);
     };
     getCardInfo();

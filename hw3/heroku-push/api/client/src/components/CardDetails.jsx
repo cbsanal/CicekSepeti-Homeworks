@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import close from "../icons/close.svg";
-//import axiosInstance from "../config";
-import axios from "axios";
+import axiosInstance from "../config";
 import { bodyFixed } from "../helpers/bodyFixed";
 
 const CardDetails = ({ setCardDetailsModal, currentCardId }) => {
@@ -9,9 +8,7 @@ const CardDetails = ({ setCardDetailsModal, currentCardId }) => {
 
   useEffect(() => {
     const getCardInfo = async () => {
-      const res = await axios.get(
-        `http://localhost:8000/api/card/oneCard/${currentCardId}`
-      );
+      const res = await axiosInstance(`/oneCard/${currentCardId}`);
       setData(res.data.card[0]);
     };
     getCardInfo();

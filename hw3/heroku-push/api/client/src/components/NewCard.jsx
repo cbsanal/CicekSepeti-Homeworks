@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { toastOptions } from "../helpers/toastOptions";
 import axios from "axios";
-// import axiosInstance from "../config";
+import axiosInstance from "../config";
 import plus from "../icons/plus.svg";
 import close from "../icons/close.svg";
 import { bodyFixed } from "../helpers/bodyFixed";
@@ -17,9 +17,9 @@ const NewCard = ({ fetchDatas, setNewCardModal }) => {
     e.preventDefault();
     try {
       await axios(photoURL);
-      await axios({
+      await axiosInstance({
         method: "POST",
-        url: "http://localhost:8000/api/card/createCard",
+        url: "/createCard",
         data: {
           title: title,
           photoURL: photoURL,

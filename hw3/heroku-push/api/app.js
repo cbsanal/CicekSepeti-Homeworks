@@ -10,10 +10,10 @@ app.use(express.json({ limit: "10kb" }));
 // Routes
 app.use("/api/card", cardRouter);
 
-//
-/* app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get("*", (req, res) => {s
+app.get("*", (req, res) => {
+  s;
   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-}); */
+});
 module.exports = app;
